@@ -1,0 +1,124 @@
+<div class="animated fadeIn">
+ 
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>EMI Detail</strong> 
+        </div>
+        <div class="card-body">
+          <form #form="ngForm" class="form-horizontal">
+            
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Full Name</label>
+              <div class="col-md-9">
+                <input type="text" name="fullName" ngModel class="form-control" placeholder="Full Name..">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="email-input">Account Number</label>
+              <div class="col-md-9">
+                <input type="text" name="shortName" ngModel class="form-control" placeholder="Short Name..">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="email-input">Principal Amount</label>
+              <div class="col-md-9">
+                <input type="text" name="shortName" ngModel class="form-control" placeholder="Short Name..">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="email-input">Installment Amount</label>
+              <div class="col-md-9">
+                <input type="text" name="shortName" ngModel class="form-control" placeholder="Short Name..">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="email-input">Total Collection</label>
+              <div class="col-md-9">
+                <input type="text" name="shortName" ngModel class="form-control" placeholder="Short Name..">
+              </div>
+            </div>
+           
+          
+            <div class="card-header">
+              <strong>Payment Detail</strong>
+            </div>
+           
+              <div class="card" ngModelGroup="address">
+               
+                <div class="card-body">
+                  
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Payment Amount</label>
+                      <div class="col-md-9">
+                        <input type="text" name="address" class="form-control" ngModel  placeholder="Address.." >
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Payment Method</label>
+                      <div class="col-md-9">
+                        <select class="form-control" id="ccyear">
+                          <option>--Payment Method--</option>
+                        </select>
+                      </div>
+                    </div>
+              </div>
+            </div><!--/.col-->
+            <div class="card-footer">
+              <button type="button" (click)="saveCustomerPersionDetail(form.value)"  class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+      </form>
+        </div>
+       
+      </div>
+     
+    </div>
+
+  </div><!--/.row-->
+ 
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> EMI Detail
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-sm">
+            <thead>
+              <tr>
+                <th>EMI Date</th>
+               
+                <th>Amount</th>
+                <th>Payment Type</th>
+              
+               
+              </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let custContactPersion of conatactPersionList">
+                <td>{{custContactPersion.fullName}}</td>
+                <td>{{custContactPersion.address.email}}</td>
+                <td>{{custContactPersion.address.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>

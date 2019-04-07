@@ -13,6 +13,8 @@ import {PopoversComponent} from './popovers.component';
 import {ProgressComponent} from './progress.component';
 import {TooltipsComponent} from './tooltips.component';
 import { CustomerComponent } from './customer.component';
+import { LoanAccountComponent } from './loan-account.component';
+import { LoanEMIComponent } from './loan-emi.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,20 @@ const routes: Routes = [
         component: CustomerComponent,
         data: {
           title: 'Customer'
+        }
+      },
+      {
+        path: 'loan-account',
+        component: LoanAccountComponent,
+        data: {
+          title: 'Loan Account'
+        }
+      },
+      {
+        path: 'loan-emi',
+        component: LoanEMIComponent,
+        data: {
+          title: 'Loan EMI'
         }
       },
       {

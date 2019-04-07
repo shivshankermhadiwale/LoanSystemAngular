@@ -12,7 +12,13 @@ export class CustomerserviceService {
   public getCustomerDetail():Observable<Customer>{
     return this.http.get<Customer>(AppConstants.API_ENDPOINT+'/customer/findById/1');
   }
+  public getCustomerAllDetail():Observable<Customer>{
+    return this.http.get<Customer>(AppConstants.API_ENDPOINT+'/customer/findAll');
+  }
   public saveCustomerDetail(customer:Customer){
     return this.http.post<Customer>(AppConstants.API_ENDPOINT+'/customer/addNew',customer);
+  }
+  public saveCustContactPersionDetail(customer:Customer){
+    return this.http.post<Customer>(AppConstants.API_ENDPOINT+'/customer/addContactPersions',customer);
   }
 }

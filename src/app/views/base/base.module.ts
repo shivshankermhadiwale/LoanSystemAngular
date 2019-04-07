@@ -46,6 +46,8 @@ import { TooltipsComponent } from './tooltips.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { CustomerComponent } from './customer.component';
+import { LoanAccountComponent } from './loan-account.component';
+import { LoanEMIComponent } from './loan-emi.component';
 
 @NgModule({
   imports: [
@@ -74,7 +76,9 @@ import { CustomerComponent } from './customer.component';
     PopoversComponent,
     ProgressComponent,
     TooltipsComponent,
-    CustomerComponent
+    CustomerComponent,
+    LoanAccountComponent,
+    LoanEMIComponent
   ]
 })
 export class BaseModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../Module/customer';
 import { CustomerserviceService } from '../../Services/customerservice.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { WebDriverLogger } from 'blocking-proxy/built/lib/webdriver_logger';
 
 @Component({
   templateUrl: 'customer.component.html'
@@ -12,6 +13,8 @@ export class CustomerComponent implements OnInit {
   customer:Customer=new Customer();
    isCollapsed: boolean = false;
   iconCollapse: string = 'icon-arrow-up';
+  custId:BigInteger;
+  conatactPersionList: Array<Customer> = [];
 
   collapsed(event: any): void {
     // console.log(event);
@@ -29,11 +32,25 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
   }
-  saveCustomerPersionDetail():void{
-    console.log("Saving Customer Persional Detail");
-    this.customerService.saveCustomerDetail(this.customer).subscribe(data => {
+  saveCustomerPersionDetail(customer):void{
+    console.log("Saving Customer Persional Detail" +JSON.stringify(customer));
+    this.customerService.saveCustomerDetail(customer).subscribe(data => {
      this.customer=data;
-      this.router.navigate(['dashboard']);
+     this.custId=this.customer.custId;
+  
+    
+    })
+  };
+  saveCustContactPersionDetail(custContactPersion):void{
+    console.log("test custId" +this.custId);
+    this.customer=custContactPersion;
+    this.customer.custId=this.custId;
+    console.log("Saving Customer Persional Detail" +JSON.stringify(this.customer));
+    this.customerService.saveCustContactPersionDetail(custContactPersion).subscribe(data => {
+     this.customer=data;
+     this.conatactPersionList.push(this.customer);
+     console.log("size "+this.conatactPersionList.length);
+    
     })
   };
 

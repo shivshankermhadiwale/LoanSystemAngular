@@ -58,6 +58,16 @@ export const navItems: NavData[] = [
         icon: 'icon-puzzle'
       },
       {
+        name: 'Loan Account',
+        url: '/base/loan-account',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Loan EMI',
+        url: '/base/loan-emi',
+        icon: 'icon-puzzle'
+      },
+      {
         name: 'Pagination',
         url: '/base/paginations',
         icon: 'icon-puzzle'

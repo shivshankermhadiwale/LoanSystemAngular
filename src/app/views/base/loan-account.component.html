@@ -1,0 +1,135 @@
+<div class="animated fadeIn">
+ 
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Loan Account Detail</strong> 
+        </div>
+        <div class="card-body">
+          <form #form="ngForm" class="form-horizontal">
+            
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Full Name</label>
+              <div class="col-md-9">
+                <select class="form-control" id="ccyear">
+                  <option>--Select Customer--</option>
+                </select>
+              </div>
+            </div>
+        
+            <div class="card-header">
+              <strong>Create New Account</strong>
+            </div>
+           
+              <div class="card" ngModelGroup="address">
+               
+                <div class="card-body">
+                  
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Principal Amount</label>
+                      <div class="col-md-9">
+                        <input type="text" name="address" class="form-control" ngModel  placeholder="Enter Principal Amount.." >
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Loan Tenure</label>
+                      <div class="col-md-3">
+                        <select class="form-control" id="ccyear">
+                          <option>--In Monnths--</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3">
+                        <select class="form-control" id="ccyear">
+                          <option>--In Years--</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Loan Interest</label>
+                      <div class="col-md-9">
+                        <input type="text" name="district" class="form-control" ngModel placeholder="Loan Interest.." >
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">EMI Type</label>
+                      <div class="col-md-9">
+                        <select class="form-control" id="ccyear">
+                          <option>--Select Type--</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">EMI Amount</label>
+                      <div class="col-md-9">
+                        <input type="text" name="country" class="form-control" ngModel placeholder="EMI Amount.." >
+                      </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">EMI Start Date</label>
+                      <div class="col-md-9">
+                        <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date">
+                        <span class="help-block">Please enter a valid date</span>
+                      </div>
+                    </div>
+                
+               
+              </div>
+            </div><!--/.col-->
+            <div class="card-footer">
+              <button type="button" (click)="saveCustomerPersionDetail(form.value)"  class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+      </form>
+        </div>
+       
+      </div>
+     
+    </div>
+
+  </div><!--/.row-->
+ 
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Loan Account Details
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+               
+                <th>Account No</th>
+                <th>Loan Amount</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let custContactPersion of conatactPersionList">
+                <td>{{custContactPersion.fullName}}</td>
+                <td>{{custContactPersion.address.email}}</td>
+                <td>{{custContactPersion.address.phoneNo}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>
