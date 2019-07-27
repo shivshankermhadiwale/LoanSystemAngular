@@ -9,9 +9,10 @@ import {
 } from '@angular/common/http';
 import { Observable,throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Injectable()
 export class AutoPassJwtTokenOnReqHeader implements HttpInterceptor{
-    constructor(){}
+    constructor(private router: Router){}
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {    
       if(localStorage.getItem('token')!=null){
         request = request.clone({
@@ -31,7 +32,23 @@ export class AutoPassJwtTokenOnReqHeader implements HttpInterceptor{
               // server-side error
               errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
             }
-            window.alert(errorMessage);
+            switch(error.status){
+              case 0:alert("Internal Server Error");
+                this.router.navigate(['login']);
+              break;
+              case 204 :alert("Not Available");
+              break;
+              case 401:alert("Unauthorized");
+              break;
+              case 404:alert("Requested is invalid");
+              break;
+              case 409:alert("Already Exist");
+              break;
+              case 500:alert("Internal Server Error");
+              break;
+              default:alert(errorMessage);
+              break;
+            }
             return throwError(errorMessage);
           })
         )

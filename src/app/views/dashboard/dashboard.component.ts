@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { Dashboard } from '../../Module/dashboard';
+import { LoanserviceService } from '../../Services/loanservice.service';
+import { Loandetail } from '../../Module/loandetail';
+import { LoanCollectionSummary } from '../../Module/loan-collection-summary';
+
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -9,7 +14,10 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 export class DashboardComponent implements OnInit {
 
   radioModel: string = 'Month';
-
+  constructor(private loanservice: LoanserviceService) { }
+  dashboardData:Dashboard=new Dashboard();
+  pendingLoanPayments: Array<Loandetail> = [];
+  loanCollectionSumm: Array<LoanCollectionSummary> = [];
   // lineChart1
   public lineChart1Data: Array<any> = [
     {
@@ -385,5 +393,20 @@ export class DashboardComponent implements OnInit {
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
     }
-  }
+    this.loanservice.getDashboard().subscribe(data => {
+      this.dashboardData=data;
+     })
+     this.loanservice.getPendingLoanPayments().subscribe(data => {
+      this.pendingLoanPayments=data;
+      console.log("test "+this.pendingLoanPayments.length);
+
+     })
+
+     this.loanservice.getTodayCollectionSummary().subscribe(data => {
+      this.loanCollectionSumm=data;
+      console.log("test "+this.loanCollectionSumm.length);
+
+     })
+    }  
+  
 }

@@ -3,6 +3,7 @@ import { UserCredentials } from '../../Module/user-credentials';
 import { LoginServiceService } from '../../Services/login-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -40,7 +41,6 @@ export class LoginComponent {
     this.loginService.checkUser(this.usercredential).subscribe(data => {
      this.usercredential=data;
      localStorage.setItem('token',this.usercredential.jwtToken);
-      console.log(this.usercredential.jwtToken);
       this.router.navigate(['dashboard']);
     })
   };

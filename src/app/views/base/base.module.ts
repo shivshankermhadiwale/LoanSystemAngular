@@ -46,8 +46,24 @@ import { TooltipsComponent } from './tooltips.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { CustomerComponent } from './customer.component';
+import { FDAccountComponent } from './fdaccount.component';
+import { CustomerInfoComponent } from './customer-info.component';
 import { LoanAccountComponent } from './loan-account.component';
+import { LoanPaymentComponent } from './loan-payment.component';
 import { LoanEMIComponent } from './loan-emi.component';
+import { DisbursedLoansComponent } from './disbursed-loans.component';
+import { LoanDetailComponent } from './loan-detail.component';
+import { CloseLoanComponent } from './close-loan.component';
+import { LoanRepoComponent } from './loan-repo.component';
+import { LoanPenltyComponent } from './loan-penlty.component';
+import { LoanCollectionReportComponent } from './loan-collection-report.component';
+import { ExpenseTypesComponent } from './expense-types.component';
+import { ExpenseDetailComponent } from './expense-detail.component';
+import { ExpenseReportComponent } from './expense-report.component';
+import { FDAccountViewComponent } from './fdaccount-view.component';
+import { FDAccountCloseComponent } from './fdaccount-close.component';
+import { FDAccountReportComponent } from './fdaccount-report.component';
+
 
 @NgModule({
   imports: [
@@ -67,6 +83,23 @@ import { LoanEMIComponent } from './loan-emi.component';
     CardsComponent,
     FormsComponent,
     CustomerComponent,
+    FDAccountComponent,
+    FDAccountViewComponent,
+    FDAccountCloseComponent,
+    FDAccountReportComponent,
+    CustomerInfoComponent,
+    LoanAccountComponent,
+    LoanPaymentComponent,
+    LoanEMIComponent,
+    DisbursedLoansComponent,
+    LoanDetailComponent,
+    CloseLoanComponent,
+    LoanRepoComponent,
+    LoanPenltyComponent,
+    LoanCollectionReportComponent,
+    ExpenseTypesComponent,
+    ExpenseDetailComponent,
+    ExpenseReportComponent,
     SwitchesComponent,
     TablesComponent,
     TabsComponent,
@@ -76,9 +109,9 @@ import { LoanEMIComponent } from './loan-emi.component';
     PopoversComponent,
     ProgressComponent,
     TooltipsComponent,
-    CustomerComponent,
-    LoanAccountComponent,
-    LoanEMIComponent
+    FDAccountViewComponent,
+    FDAccountCloseComponent,
+    FDAccountReportComponent
   ]
 })
 export class BaseModule { }

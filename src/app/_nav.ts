@@ -36,173 +36,173 @@ export const navItems: NavData[] = [
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
-      text: 'NEW'
+      text: 'Open'
     }
   },
  
  
   {
-    name: 'Base',
-    url: '/base',
+    name: 'Customer',
+    url: '/customer',
     icon: 'icon-puzzle',
     children: [
-     
       {
-        name: 'Forms',
-        url: '/base/forms',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Customers',
+        name: 'New Customer',
         url: '/base/customer',
         icon: 'icon-puzzle'
       },
       {
-        name: 'Loan Account',
-        url: '/base/loan-account',
+        name: 'Customer Information',
+        url: '/base/customer-info',
         icon: 'icon-puzzle'
       },
+     
+     
+    ]
+  },
+
+  
+  {
+    name: 'Loan',
+    url: '/Loan',
+    icon: 'icon-puzzle',
+    children: [
+     {
+        name: 'Account',
+        url: '/Loan',
+        icon: 'icon-puzzle',
+        children: [
+          {
+            name: 'New',
+            url: '/base/loan-account',
+            icon: 'icon-puzzle'
+          },
+          {
+            name: 'View',
+            url: '/base/loan-detail',
+            icon: 'icon-puzzle'
+          },
+          {
+            name: 'Close',
+            url: '/base/close-loan',
+            icon: 'icon-puzzle'
+          },
+        ]
+      },
+
       {
-        name: 'Loan EMI',
+
+        name: 'Disbursement',
+        url: '/Loan',
+        icon: 'icon-puzzle',
+        children: [
+        {
+          name: 'Disburse Loan',
+          url: '/base/loan-payment',
+          icon: 'icon-puzzle'
+        },
+        {
+          name: 'Disbursed Loans',
+          url: '/base/disbursed-loans',
+          icon: 'icon-puzzle'
+        },
+      ]
+        
+      },
+      {
+        name: 'Installments',
         url: '/base/loan-emi',
         icon: 'icon-puzzle'
       },
+      
       {
-        name: 'Pagination',
-        url: '/base/paginations',
+        name: 'Reports',
+        url: '/base',
+        icon: 'icon-puzzle',
+        children: [
+          {
+            name: 'Loan Status',
+            url: '/base/loan-repo',
+            icon: 'icon-puzzle'
+          },
+          {
+            name: 'Collection Report',
+            url: '/base/loan-collection-report',
+            icon: 'icon-puzzle'
+          },
+     ]
+      },
+      {
+        name: 'Penlty',
+        url: '/base/loan-penlty',
         icon: 'icon-puzzle'
       },
-      {
-        name: 'Popovers',
-        url: '/base/popovers',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Progress',
-        url: '/base/progress',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Switches',
-        url: '/base/switches',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tables',
-        url: '/base/tables',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tabs',
-        url: '/base/tabs',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tooltips',
-        url: '/base/tooltips',
-        icon: 'icon-puzzle'
-      }
-    ]
-  },
-  
-  {
-    name: 'Icons',
-    url: '/icons',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'CoreUI Icons',
-        url: '/icons/coreui-icons',
-        icon: 'icon-star',
-        badge: {
-          variant: 'success',
-          text: 'NEW'
-        }
-      },
-      {
-        name: 'Flags',
-        url: '/icons/flags',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Font Awesome',
-        url: '/icons/font-awesome',
-        icon: 'icon-star',
-        badge: {
-          variant: 'secondary',
-          text: '4.7'
-        }
-      },
-      {
-        name: 'Simple Line Icons',
-        url: '/icons/simple-line-icons',
-        icon: 'icon-star'
-      }
-    ]
+  ]
   },
   {
-    name: 'Notifications',
-    url: '/notifications',
-    icon: 'icon-bell',
+    name: 'Expense',
+    url: '/Expense',
+    icon: 'icon-puzzle',
     children: [
       {
-        name: 'Alerts',
-        url: '/notifications/alerts',
-        icon: 'icon-bell'
+        name: 'Expense Types',
+        url: '/base/expense-types',
+        icon: 'icon-puzzle'
       },
       {
-        name: 'Badges',
-        url: '/notifications/badges',
-        icon: 'icon-bell'
+        name: 'Add Expenses',
+        url: '/base/expense-detail',
+        icon: 'icon-puzzle'
       },
       {
-        name: 'Modals',
-        url: '/notifications/modals',
-        icon: 'icon-bell'
-      }
+        name: 'Expenses Report',
+        url: '/base/expense-report',
+        icon: 'icon-puzzle'
+      },
+     
+      
     ]
   },
-  
+   {   name: 'Fixed Deposite',
+        url: '/FD',
+        icon: 'icon-puzzle',
+        children: [
+          
+          {
+            name: 'Account',
+            url: '/base/fdaccount',
+            icon: 'icon-puzzle',
+            children:[
+              {
+                name: 'New',
+                url: '/base/fdaccount',
+                icon: 'icon-puzzle'
+              },
+              {
+                name: 'View',
+                url: '/base/fdaccountview',
+                icon: 'icon-puzzle'
+              },
+              {
+                name: 'Close',
+                url: '/base/fdaccountclose',
+                icon: 'icon-puzzle'
+              },
+              {
+                name: 'Report',
+                url: '/base/fdaccountreport',
+                icon: 'icon-puzzle'
+              },
+            ],
+          
+          },
+        ],
+      },
+
   {
     divider: true
   },
   
-  {
-    name: 'Pages',
-    url: '/pages',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Login',
-        url: '/login',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Register',
-        url: '/register',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 404',
-        url: '/404',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 500',
-        url: '/500',
-        icon: 'icon-star'
-      }
-    ]
-  },
-  {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
-  },
+ 
  
 ];

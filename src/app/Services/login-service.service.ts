@@ -27,10 +27,7 @@ export class LoginServiceService {
    // localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
 }          
 
-logout() {
-    localStorage.removeItem("id_token");
-  //  localStorage.removeItem("expires_at");
-}
+
 
 public isLoggedIn() {
     //return moment().isBefore(this.getExpiration());

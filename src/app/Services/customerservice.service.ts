@@ -9,16 +9,23 @@ import { Observable } from 'rxjs';
 export class CustomerserviceService {
 
   constructor(private http: HttpClient) { }
-  public getCustomerDetail():Observable<Customer>{
-    return this.http.get<Customer>(AppConstants.API_ENDPOINT+'/customer/findById/1');
+  public getCustomerDetail(custId):Observable<Customer>{
+    return this.http.get<Customer>(AppConstants.API_ENDPOINT+'/customer/findById/'+custId);
   }
-  public getCustomerAllDetail():Observable<Customer>{
-    return this.http.get<Customer>(AppConstants.API_ENDPOINT+'/customer/findAll');
+  public getCustomerAllDetail():Observable<Customer[]>{
+    return this.http.get<Customer[]>(AppConstants.API_ENDPOINT+'/customer/findAll');
   }
   public saveCustomerDetail(customer:Customer){
     return this.http.post<Customer>(AppConstants.API_ENDPOINT+'/customer/addNew',customer);
   }
   public saveCustContactPersionDetail(customer:Customer){
     return this.http.post<Customer>(AppConstants.API_ENDPOINT+'/customer/addContactPersions',customer);
+  }
+  public getCustomerContactPeoples(custId):Observable<Customer[]>{
+    return this.http.get<Customer[]>(AppConstants.API_ENDPOINT+'/customer/findContactPersionByCustId/'+custId);
+  }
+
+  public downloadCustPdf(custId){
+    return this.http.get(AppConstants.API_ENDPOINT+'/customer/downloadCustPDF/'+custId);
   }
 }

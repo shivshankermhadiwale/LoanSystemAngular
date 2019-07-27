@@ -15,6 +15,22 @@ import {TooltipsComponent} from './tooltips.component';
 import { CustomerComponent } from './customer.component';
 import { LoanAccountComponent } from './loan-account.component';
 import { LoanEMIComponent } from './loan-emi.component';
+import { CustomerInfoComponent } from './customer-info.component';
+import { LoanDetailComponent } from './loan-detail.component';
+import { CloseLoanComponent } from './close-loan.component';
+import { LoanRepoComponent } from './loan-repo.component';
+import { LoanPaymentComponent } from './loan-payment.component';
+import { LoanPenltyComponent } from './loan-penlty.component';
+import { LoanCollectionReportComponent } from './loan-collection-report.component';
+import { ExpenseTypesComponent } from './expense-types.component';
+import { ExpenseDetailComponent } from './expense-detail.component';
+import { ExpenseReportComponent } from './expense-report.component';
+import { DisbursedLoansComponent } from './disbursed-loans.component';
+import { FDAccountComponent } from './fdaccount.component';
+import { FDAccountViewComponent } from './fdaccount-view.component';
+import { FDAccountCloseComponent } from './fdaccount-close.component';
+import { FDAccountReportComponent } from './fdaccount-report.component';
+
 
 const routes: Routes = [
   {
@@ -23,15 +39,33 @@ const routes: Routes = [
       title: 'Base'
     },
     children: [
+      
       {
-        path: '',
-        redirectTo: 'cards'
+        path: 'fdaccount',
+        component:FDAccountComponent,
+        data: {
+          title: 'fdaccount'
+        }
       },
       {
-        path: 'cards',
-        component: CardsComponent,
+        path: 'fdaccountview',
+        component:FDAccountViewComponent,
         data: {
-          title: 'Cards'
+          title: 'fdaccountview'
+        }
+      },
+      {
+        path: 'fdaccountclose',
+        component:FDAccountCloseComponent,
+        data: {
+          title: 'fdaccountview'
+        }
+      },
+      {
+        path: 'fdaccountreport',
+        component:FDAccountReportComponent,
+        data: {
+          title: 'fdaccountview'
         }
       },
       {
@@ -49,10 +83,24 @@ const routes: Routes = [
         }
       },
       {
+        path: 'customer-info',
+        component: CustomerInfoComponent,
+        data: {
+          title: 'Customer Information'
+        }
+      },
+      {
         path: 'loan-account',
         component: LoanAccountComponent,
         data: {
           title: 'Loan Account'
+        }
+      },
+      {
+        path: 'loan-payment',
+        component: LoanPaymentComponent,
+        data: {
+          title: 'Loan Payment'
         }
       },
       {
@@ -63,68 +111,74 @@ const routes: Routes = [
         }
       },
       {
-        path: 'switches',
-        component: SwitchesComponent,
+        path: 'disbursed-loans',
+        component: DisbursedLoansComponent,
         data: {
-          title: 'Switches'
+          title: 'Disbursed Loans'
+        }
+      },
+
+
+      {
+        path: 'loan-detail',
+        component: LoanDetailComponent,
+        data: {
+          title: 'Loan Detail'
         }
       },
       {
-        path: 'tables',
-        component: TablesComponent,
+        path: 'close-loan',
+        component: CloseLoanComponent,
         data: {
-          title: 'Tables'
+          title: 'Close Loan'
         }
       },
       {
-        path: 'tabs',
-        component: TabsComponent,
+        path: 'loan-repo',
+        component:LoanRepoComponent,
         data: {
-          title: 'Tabs'
+          title: 'Loan Report'
+        }
+      },
+
+      {
+        path: 'loan-penlty',
+        component:LoanPenltyComponent,
+        data: {
+          title: 'Add Penlty'
         }
       },
       {
-        path: 'carousels',
-        component: CarouselsComponent,
+        path: 'loan-collection-report',
+        component:LoanCollectionReportComponent,
         data: {
-          title: 'Carousels'
+          title: 'Loan Collection Report'
         }
       },
       {
-        path: 'collapses',
-        component: CollapsesComponent,
+        path: 'expense-types',
+        component:ExpenseTypesComponent,
         data: {
-          title: 'Collapses'
+          title: 'Expense Types'
+        }
+      },
+
+      {
+        path: 'expense-detail',
+        component:ExpenseDetailComponent,
+        data: {
+          title: 'Expenses'
         }
       },
       {
-        path: 'paginations',
-        component: PaginationsComponent,
+        path: 'expense-report',
+        component:ExpenseReportComponent,
         data: {
-          title: 'Pagination'
+          title: 'Expenses'
         }
       },
-      {
-        path: 'popovers',
-        component: PopoversComponent,
-        data: {
-          title: 'Popover'
-        }
-      },
-      {
-        path: 'progress',
-        component: ProgressComponent,
-        data: {
-          title: 'Progress'
-        }
-      },
-      {
-        path: 'tooltips',
-        component: TooltipsComponent,
-        data: {
-          title: 'Tooltips'
-        }
-      }
+    
+
     ]
   }
 ];

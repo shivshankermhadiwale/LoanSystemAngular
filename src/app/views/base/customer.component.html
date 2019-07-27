@@ -7,39 +7,24 @@
           <strong>Customer Detail</strong> 
         </div>
         <div class="card-body">
-          <form #form="ngForm" class="form-horizontal">
+          <form #custform="ngForm" class="form-horizontal">
             
             <div class="form-group row">
               <label class="col-md-3 col-form-label">Full Name</label>
               <div class="col-md-9">
-                <input type="text" name="fullName" ngModel class="form-control" placeholder="Full Name..">
+                <input type="text" name="fullName" ngModel class="form-control is-invalid" id="inputError1" placeholder="Full Name..">
+                <div *ngIf="isCustValid" class="invalid-feedback">
+                    Please Enter Customer Name.
+                  </div>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-3 col-form-label" for="email-input">Short Name</label>
+              <label class="col-md-3 col-form-label">Buiseness</label>
               <div class="col-md-9">
-                <input type="text" name="shortName" ngModel class="form-control" placeholder="Short Name..">
+                <input type="text" name="professionName" ngModel class="form-control"  placeholder="Buiseness Name..">
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-md-3 col-form-label" >Type</label>
-              <div class="col-md-9">
-                <input type="text" name="custType" ngModel class="form-control" placeholder="Customer Type..">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-3 col-form-label" >Registration</label>
-              <div class="col-md-9">
-                <input class="form-control" type="text" name="registrationNo" ngModel placeholder="Registration No..">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-3 col-form-label">GSTIN No.</label>
-              <div class="col-md-9">
-                <input class="form-control" type="text" name="gstnNo" ngModel placeholder="GSTIN No.">
-              </div>
-            </div>
-            <div class="form-group row">
+           <div class="form-group row">
               <label class="col-md-3 col-form-label" >Adhar No.</label>
               <div class="col-md-9">
                 <input class="form-control" type="text" name="adharNo" ngModel placeholder="Adhar No.">
@@ -65,7 +50,7 @@
                         <input type="text" name="address" class="form-control" ngModel  placeholder="Address.." >
                       </div>
                     </div>
-                    <div class="form-group row">
+                    <!--                    <div class="form-group row">
                       <label class="col-md-3 col-form-label" for="hf-email">City</label>
                       <div class="col-md-9">
                         <input type="text" name="city" class="form-control" ngModel placeholder="City.." autocomplete="email">
@@ -89,7 +74,7 @@
                         <input type="text" name="country" class="form-control" ngModel placeholder="Country.." autocomplete="email">
                       </div>
                     </div>
-                    
+                    -->
                     <div class="form-group row">
                       <label class="col-md-3 col-form-label" for="hf-email">Postal Code</label>
                       <div class="col-md-9">
@@ -114,12 +99,19 @@
                         <input type="text" name="altNo" class="form-control" ngModel placeholder="Alternet No." autocomplete="email">
                       </div>
                     </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Native Place</label>
+                      <div class="col-md-9">
+                        <input type="text" name="nativePlace" class="form-control" ngModel placeholder="Native Place" autocomplete="email">
+                      </div>
+                    </div>
+                
                
                
               </div>
             </div><!--/.col-->
             <div class="card-footer">
-              <button type="button" (click)="saveCustomerPersionDetail(form.value)"  class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="button" (click)="saveCustomerPersionDetail(custform.value)"  class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
               <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
       </form>
@@ -133,30 +125,32 @@
   <div class="col-sm-14">
     <div class="card">
       <div class="card-header">
-        <strong>Contact Persions</strong>
+        <strong>Witness Persions</strong>
       </div>
       <div class="card-body">
           <form #form="ngForm" class="form-horizontal">
         <div class="row">
         
-            <div class="form-group col-sm-3">
+            <div class="form-group col-sm-4">
               <label for="name">Full Name</label>
-              <input type="text" class="form-control" name="fullName" ngModel placeholder="Enter your name">
+              <input type="text" class="form-control is-invalid" id="inputError1"  name="fullName" ngModel >
+              <div *ngIf="isWitnessValid" class="invalid-feedback">
+                  Please Enter Customer Name.
+                </div>
             </div>
             <div class="row" ngModelGroup="address">
-            <div class="form-group col-sm-3">
-              <label for="name">Email</label>
-              <input type="text" class="form-control" name="email" ngModel placeholder="Enter your name">
+            <div class="form-group col-sm-6">
+              <label for="name">Address</label>
+              <input type="text" class="form-control" name="address" ngModel placeholder="Address.....">
             </div>
-            <div class="form-group col-sm-3">
+            <div class="form-group col-sm-6">
               <label for="name">Phone No.</label>
-              <input type="text" class="form-control" name="phoneNo" ngModel placeholder="Enter your name">
+              <input type="text" class="form-control" name="phoneNo" ngModel  placeholder="Phone No....">
             </div>
             </div>
-            <div  class="form-group col-sm-3">
+            <div  class="form-group col-sm-5">
               
-                <button type="button" (click)="saveCustContactPersionDetail(form.value)"  class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                <button type="button" (click)="saveCustContactPersionDetail(form.value)"  class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Add Witness</button>
               </div>
          
         </div><!--/.row-->
@@ -168,7 +162,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header">
-          <i class="fa fa-align-justify"></i> Customer Contact Persions
+          <i class="fa fa-align-justify"></i>Witness Persions
         </div>
         <div class="card-body">
           <table class="table table-bordered table-striped table-sm">
@@ -176,7 +170,7 @@
               <tr>
                 <th>Full Name</th>
                
-                <th>Email</th>
+                <th>Address</th>
                 <th>Phone No.</th>
                
               </tr>
@@ -184,23 +178,12 @@
             <tbody>
             <tr *ngFor="let custContactPersion of conatactPersionList">
                 <td>{{custContactPersion.fullName}}</td>
-                <td>{{custContactPersion.address.email}}</td>
+                <td>{{custContactPersion.address.address}}</td>
                 <td>{{custContactPersion.address.phoneNo}}</td>
               </tr>
             </tbody>
           </table>
-          <nav>
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
+         
         </div>
       </div>
     </div>

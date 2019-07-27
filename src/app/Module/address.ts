@@ -8,4 +8,5 @@ export class Address {
 	private email:String;
 	private phoneNo:String;
 	private altNo:String;
+	private nativePlace:string;
 }

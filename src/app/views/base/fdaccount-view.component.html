@@ -1,0 +1,99 @@
+<div class="animated fadeIn">
+ 
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Fixed Deposite Account </strong> 
+       
+        </div>
+        <div class="card-body">
+          <form #form="ngForm" class="form-horizontal">
+            
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Account No</label>
+              <div class="col-md-9">
+                <div class="col-md-9">
+                  <input name="fdAccountDtlsId" ngModel  (blur)="getAccountDetail($event.target.value)"  class="form-control" placeholder="FD Account No...." >
+                </div>
+              </div>
+            </div>
+        
+            <div class="card-header">
+              <strong>Account Detail</strong>
+            </div>
+           
+              <div class="card" >
+               
+                <div class="card-body">
+                  
+                    <div class="form-group row">
+                      <label for="email-input" class="col-md-3 col-form-label">Customer Name</label>
+                      <div class="col-md-9">
+                        <input type="text" value="{{fdAccountDtls.custName}}" ngModel class="form-control" readonly>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">FD Amount</label>
+                      <div class="col-md-9">
+                        <input type="text" value="{{fdAccountDtls.amount}}" ngModel class="form-control" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="hf-email">Iterest</label>
+                        <div class="col-md-9">
+                          <input type="text" value="{{fdAccountDtls.interest}}" ngModel class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="hf-email">Iterest Amount</label>
+                          <div class="col-md-9">
+                            <input type="text" value="{{fdAccountDtls.interestAmt}}" ngModel class="form-control" readonly>
+                          </div>
+                        </div>
+                      
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Start Date</label>
+                      <div class="col-md-9">
+                        <input type="text" value="{{fdAccountDtls.startDate}}" ngModel class="form-control" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="hf-email">End Date</label>
+                        <div class="col-md-9">
+                          <input type="text" value="{{fdAccountDtls.endDate}}" ngModel class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="hf-email">Status</label>
+                      <div class="col-md-9">
+                        <input type="text" value="{{fdAccountDtls.isActive}}" ngModel class="form-control" readonly>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="hf-email">Closing Date</label>
+                    <div class="col-md-9">
+                      <input type="text" value="{{fdAccountDtls.closingDate}}" ngModel class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hf-email">FD Detail</label>
+                  <div class="col-md-9">
+                    <a [href]="fileUrl" target="_blank" download="fd.pdf">DownloadFile</a>
+                 
+                  </div>
+                </div>
+              </div>
+            </div><!--/.col-->
+           
+      </form>
+        </div>
+       
+      </div>
+     
+    </div>
+
+  </div><!--/.row-->
+ 
+</div>
