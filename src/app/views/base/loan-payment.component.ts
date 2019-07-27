@@ -32,7 +32,7 @@ export class LoanPaymentComponent implements OnInit {
 
    makeLoanPayment(paymentDetail){
    this.loanDetail.paymentMode=paymentDetail.paymentMode;
-   this.loanDetail.disburseAmt=this.disburseAmt;
+   this.loanDetail.disburseAmt=paymentDetail.disburseAmt;
      this.loanservice.makeLoanPayment(this.loanDetail).subscribe(data => {
        this.loanDetail=data;
       alert("Payment Done Successfully");
