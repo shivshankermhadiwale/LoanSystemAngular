@@ -40,25 +40,13 @@
                         <input type="text" value="{{fdAccountDtls.amount}}"  class="form-control" readonly>
                       </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="hf-email">Iterest</label>
-                        <div class="col-md-9">
-                          <input type="text" value="{{fdAccountDtls.interest}}"    class="form-control" readonly>
-                        </div>
-                      </div>
                       <div class="form-group row">
-                          <label class="col-md-3 col-form-label" for="hf-email">Iterest Amount</label>
+                          <label class="col-md-3 col-form-label" for="hf-email">Paid Iterest</label>
                           <div class="col-md-9">
                             <input type="text" value="{{fdAccountDtls.interestAmt}}" class="form-control" readonly>
                           </div>
                         </div>
                       
-                    <div class="form-group row">
-                      <label class="col-md-3 col-form-label" for="hf-email">Start Date</label>
-                      <div class="col-md-9">
-                        <input type="text" value="{{fdAccountDtls.startDate}}" class="form-control" readonly>
-                      </div>
-                    </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="hf-email">End Date</label>
                         <div class="col-md-9">
@@ -71,18 +59,6 @@
                         <input type="text" value="{{fdAccountDtls.isActive}}" class="form-control" readonly>
                       </div>
                   </div>
-                  <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="hf-email">Closing Time Iterest</label>
-                    <div class="col-md-9">
-                      <input type="text" value="{{fdAccountDtls.interest}}"  name="interest" (blur)="calculateItersetAmt()" [(ngModel)]=fdAccountDtls.interest class="form-control" >
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                      <label class="col-md-3 col-form-label" for="hf-email">Closing Time Iterest Amount</label>
-                      <div class="col-md-9">
-                        <input type="text" value="{{fdAccountDtls.interestAmt}}" name="interestAmt" [(ngModel)]=fdAccountDtls.interestAmt class="form-control" >
-                      </div>
-                    </div>
                     <div class="form-group row">
                       <label class="col-md-3 col-form-label" for="hf-email">Remark</label>
                       <div class="col-md-9">

@@ -63,6 +63,8 @@ import { ExpenseReportComponent } from './expense-report.component';
 import { FDAccountViewComponent } from './fdaccount-view.component';
 import { FDAccountCloseComponent } from './fdaccount-close.component';
 import { FDAccountReportComponent } from './fdaccount-report.component';
+import { FDPayInterestAmtComponent } from './fdpay-interest-amt.component';
+import { FDOfCustomersComponent } from './fdof-customers.component';
 
 
 @NgModule({
@@ -111,7 +113,9 @@ import { FDAccountReportComponent } from './fdaccount-report.component';
     TooltipsComponent,
     FDAccountViewComponent,
     FDAccountCloseComponent,
-    FDAccountReportComponent
+    FDAccountReportComponent,
+    FDPayInterestAmtComponent,
+    FDOfCustomersComponent
   ]
 })
 export class BaseModule { }

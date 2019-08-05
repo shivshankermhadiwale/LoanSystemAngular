@@ -188,14 +188,37 @@ export const navItems: NavData[] = [
                 url: '/base/fdaccountclose',
                 icon: 'icon-puzzle'
               },
+            ],
+          },
+          {
+            name: 'Interest',
+            url: '/base/fdaccount',
+            icon: 'icon-puzzle',
+            children:[
               {
-                name: 'Report',
-                url: '/base/fdaccountreport',
+                name: 'Pay',
+                url: '/base/fdpayinterest',
                 icon: 'icon-puzzle'
               },
-            ],
-          
-          },
+          ],
+        },
+        {
+          name: 'Reports',
+          url: '/base/fdaccount',
+          icon: 'icon-puzzle',
+          children:[
+            {
+              name: 'Status',
+              url: '/base/fdaccountreport',
+              icon: 'icon-puzzle'
+            },
+            {
+              name: 'Holders',
+              url: '/base/fdcustreport',
+              icon: 'icon-puzzle'
+            },
+        ],
+      },
         ],
       },
 

@@ -30,6 +30,8 @@ import { FDAccountComponent } from './fdaccount.component';
 import { FDAccountViewComponent } from './fdaccount-view.component';
 import { FDAccountCloseComponent } from './fdaccount-close.component';
 import { FDAccountReportComponent } from './fdaccount-report.component';
+import { FDPayInterestAmtComponent } from './fdpay-interest-amt.component';
+import { FDOfCustomersComponent } from './fdof-customers.component';
 
 
 const routes: Routes = [
@@ -62,10 +64,24 @@ const routes: Routes = [
         }
       },
       {
+        path: 'fdpayinterest',
+        component:FDPayInterestAmtComponent,
+        data: {
+          title: 'fdpayinterest'
+        }
+      },
+      {
         path: 'fdaccountreport',
         component:FDAccountReportComponent,
         data: {
           title: 'fdaccountview'
+        }
+      },
+      {
+        path: 'fdcustreport',
+        component:FDOfCustomersComponent,
+        data: {
+          title: 'fdcustreport'
         }
       },
       {
