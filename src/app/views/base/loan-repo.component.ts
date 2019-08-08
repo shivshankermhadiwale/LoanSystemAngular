@@ -17,7 +17,7 @@ export class LoanRepoComponent implements OnInit {
   }
 
   onStatusChange(loanStatus){
-    this.fileUrl= AppConstants.API_ENDPOINT+"/Loan/download-loan-account/"+loanStatus;
+    this.fileUrl= AppConstants.API_ENDPOINT+"/Loan/download-loan-accounts/"+loanStatus;
     this.loanservice.getLoanDetailByStatus(loanStatus).subscribe(data => {
       
       this.loanRepoDetails=data;

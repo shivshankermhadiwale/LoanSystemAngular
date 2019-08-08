@@ -25,7 +25,7 @@ export class FDAccountViewComponent implements OnInit {
      this.fdService.getFDDetailByFDId(fdId).subscribe(data => {
        this.fdAccountDtls=data;
        this.fdInterestHistory=this.fdAccountDtls.paidInterestHistory;
-       this.fileUrl= AppConstants.API_ENDPOINT+"/FD/downloadFDPDF/"+fdId;
+       this.fileUrl= AppConstants.API_ENDPOINT+"/FD/download/"+fdId;
       })
     }
    

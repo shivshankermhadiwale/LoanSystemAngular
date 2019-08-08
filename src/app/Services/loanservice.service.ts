@@ -18,50 +18,52 @@ export class LoanserviceService {
   constructor(private http: HttpClient) { }
 
   public saveLoanDetail(loandetail:Loandetail){
-    return this.http.post<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/createLoanAccount',loandetail);
+    return this.http.post<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/new',loandetail);
   }
-  public makeLoanPayment(loandetail:Loandetail){
-    return this.http.post<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/makeLoanPayment',loandetail);
+  public getLoanDetailByLoanId(loanId){
+    return this.http.get<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/find/'+loanId);
   }
   public getLoanDetailByCustIdAndStatus(custId){
-    return this.http.get<Loandetail[]>(AppConstants.API_ENDPOINT+'/Loan/getLoanDetailByCustId/'+custId+'/Opened');
+    return this.http.get<Loandetail[]>(AppConstants.API_ENDPOINT+'/Loan/find/'+custId+'/Opened');
   }
-
-  public getLoanDetailByLoanId(loanId){
-    return this.http.get<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/getLoanDetailByLoanId/'+loanId);
-  }
-
-  public addCustomerPaymet(payment:PaymentDetail){
-    return this.http.post<PaymentDetail>(AppConstants.API_ENDPOINT+'/Loan/addPayment',payment);
-  }
-
-  public closeLoanAccount(loandetail:Loandetail){
-    return this.http.post<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/closeLoanAccount',loandetail);
-  }
-
   public getLoanDetailByStatus(loanStatus){
-    return this.http.get<LoanRepo[]>(AppConstants.API_ENDPOINT+'/Loan/getLoanDetailByStatus/'+loanStatus);
+    return this.http.get<LoanRepo[]>(AppConstants.API_ENDPOINT+'/Loan/find-all/'+loanStatus);
   }
-  public getDashboard(){
-    return this.http.get<Dashboard>(AppConstants.API_ENDPOINT+'/dashboard/getData');
+  public closeLoanAccount(loandetail:Loandetail){
+    return this.http.post<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/close',loandetail);
   }
-  public getPendingLoanPayments(){
-    return this.http.get<Loandetail[]>(AppConstants.API_ENDPOINT+'/dashboard/getPendingLoanPayments');
-  }
-  public getTodayCollectionSummary(){
-    return this.http.get<LoanCollectionSummary[]>(AppConstants.API_ENDPOINT+'/Loan/getTodayCollectionSummary');
-  }
-  public getLoanPenltyByLoanId(loanAccountNo){
-    return this.http.get<LoanPenalty[]>(AppConstants.API_ENDPOINT+'/Loan/get-penalty-by-loanAccountId/'+loanAccountNo);
-  }
-  public addLoanPenlty(loanPenlty:LoanPenalty){
-    return this.http.post<LoanPenalty>(AppConstants.API_ENDPOINT+'/Loan/add-loan-penalty',loanPenlty);
+  public makeLoanPayment(loandetail:Loandetail){
+    return this.http.post<Loandetail>(AppConstants.API_ENDPOINT+'/Loan/disburse',loandetail);
   }
   public getDisburseLoansByStatus(loanStatus){
-    return this.http.get<LoanRepo[]>(AppConstants.API_ENDPOINT+'/Loan/get-loan-disbursed-by-loan-status/'+loanStatus);
+    return this.http.get<LoanRepo[]>(AppConstants.API_ENDPOINT+'/Loan/find-disbursement/'+loanStatus);
+  }
+  public getPendingLoanPayments(){
+    return this.http.get<Loandetail[]>(AppConstants.API_ENDPOINT+'/Loan/find-pending-disbursements');
+  }
+  public addCustomerPaymet(payment:PaymentDetail){
+    return this.http.post<PaymentDetail>(AppConstants.API_ENDPOINT+'/Loan/add-emi',payment);
+  }
+  public getLoanCollectionsByDate(fromDate:string,toDate:string){
+    return this.http.get<LoanCollectionSummary[]>(AppConstants.API_ENDPOINT+'/Loan/get-emi/'+fromDate+"/"+toDate);
+  }
+  public getTodayCollectionSummary(){
+    return this.http.get<LoanCollectionSummary[]>(AppConstants.API_ENDPOINT+'/Loan/get-daily-paid-emi');
+  }
+  public getLoanPenltyByLoanId(loanAccountNo){
+    return this.http.get<LoanPenalty[]>(AppConstants.API_ENDPOINT+'/Loan/get-penalty/'+loanAccountNo);
+  }
+  public addLoanPenlty(loanPenlty:LoanPenalty){
+    return this.http.post<LoanPenalty>(AppConstants.API_ENDPOINT+'/Loan/add-penalty',loanPenlty);
   }
 
-  public getLoanCollectionsByDate(fromDate:string,toDate:string){
-    return this.http.get<LoanCollectionSummary[]>(AppConstants.API_ENDPOINT+'/Loan/get-payment-collection-by-date/'+fromDate+"/"+toDate);
+  public getDashboard(){
+    return this.http.get<Dashboard>(AppConstants.API_ENDPOINT+'/Loan/dashboard');
   }
+ 
+  
+ 
+ 
+
+  
 }

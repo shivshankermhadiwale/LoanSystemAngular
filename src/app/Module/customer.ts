@@ -6,5 +6,6 @@ export class Customer {
         public panNo:string;
         public adharNo:string;
         public custId:BigInteger;
+        public contactPersionId:BigInteger;
         public address:Address;
 }

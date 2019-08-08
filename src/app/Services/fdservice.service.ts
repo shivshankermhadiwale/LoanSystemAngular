@@ -12,24 +12,23 @@ export class FDServiceService {
   constructor(private http: HttpClient) { }
   
   public createNewFD(fdaccount:FDAccount){
-    return this.http.post<FDAccount>(AppConstants.API_ENDPOINT+'/FD/new-fd',fdaccount);
+    return this.http.post<FDAccount>(AppConstants.API_ENDPOINT+'/FD/new',fdaccount);
+  }
+  public closeFD(fdaccount:FDAccount){
+    return this.http.post<FDAccount>(AppConstants.API_ENDPOINT+'/FD/close',fdaccount);
   }
   public getFDDetailByFDId(fdId){
-    return this.http.get<FDAccount>(AppConstants.API_ENDPOINT+'/FD/find-fd-by-accountid/'+fdId);
-  }
-
-  public closeFD(fdaccount:FDAccount){
-    return this.http.post<FDAccount>(AppConstants.API_ENDPOINT+'/FD/close-fd',fdaccount);
+    return this.http.get<FDAccount>(AppConstants.API_ENDPOINT+'/FD/find/'+fdId);
   }
 
   public getFdsByStatus(fdStatus){
-    return this.http.get<FDAccount[]>(AppConstants.API_ENDPOINT+'/FD/get-fds-by-status/'+fdStatus);
+    return this.http.get<FDAccount[]>(AppConstants.API_ENDPOINT+'/FD/find-all/'+fdStatus);
   }
   public getCustFDLst(custId){
-    return this.http.get<FDAccount[]>(AppConstants.API_ENDPOINT+'/FD/get-cust-fd-lst/'+custId);
+    return this.http.get<FDAccount[]>(AppConstants.API_ENDPOINT+'/FD/findAll/'+custId);
   }
   public payInterestAmt(fdinterest:FDInterestDtl){
-    return this.http.post<FDInterestDtl>(AppConstants.API_ENDPOINT+'/FD/pay-fd-intersamt',fdinterest);
+    return this.http.post<FDInterestDtl>(AppConstants.API_ENDPOINT+'/FD/pay-interst-amount',fdinterest);
   }
 
 }
